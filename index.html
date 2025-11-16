@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOLO QR Code</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>QR码生成与识别</h1>
+<div class="grid">
+<section class="card">
+<h2>生成QR码</h2>
+<label for="gen-text">内容</label>
+<textarea id="gen-text" placeholder="输入要编码的文本或链接"></textarea>
+<div class="row">
+<div class="field">
+<label for="gen-size">大小</label>
+<select id="gen-size">
+<option value="128">128</option>
+<option value="192">192</option>
+<option value="256" selected>256</option>
+<option value="384">384</option>
+<option value="512">512</option>
+</select>
+ </div>
+<div class="field">
+<label for="gen-ecl">容错级别</label>
+<select id="gen-ecl">
+<option value="L">L</option>
+<option value="M" selected>M</option>
+<option value="Q">Q</option>
+<option value="H">H</option>
+</select>
+ </div>
+<div class="field">
+<label for="gen-margin">边距</label>
+<select id="gen-margin">
+<option value="0">0</option>
+<option value="2" selected>2</option>
+<option value="4">4</option>
+<option value="8">8</option>
+</select>
+ </div>
+ </div>
+<button id="gen-btn">生成</button>
+<div class="preview">
+<canvas id="gen-canvas"></canvas>
+ </div>
+<a id="gen-download" href="#" download="qrcode.png" class="secondary" aria-disabled="true">下载PNG</a>
+ </section>
+<section class="card">
+<h2>识别QR码</h2>
+<div class="row">
+<button id="cam-start">开启摄像头</button>
+<button id="cam-stop" class="secondary">停止</button>
+ </div>
+<video id="cam-video" playsinline></video>
+<input id="file-input" type="file" accept="image/*">
+<div class="result" id="read-result"></div>
+ </section>
+ </div>
+<footer>
+<span>本地运行，数据不上传</span>
+ </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
