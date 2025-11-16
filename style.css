@@ -11,6 +11,7 @@ h2{font-size:18px;margin:0 0 12px}
 label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
 textarea{width:100%;min-height:90px;resize:vertical;padding:10px;border-radius:8px;border:1px solid var(--border);background:#0d1218;color:var(--text)}
 .row{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+.row button{flex:0 0 auto}
 .field{flex:1;min-width:120px}
 select,input[type=file]{width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);background:#0d1218;color:var(--text)}
 button{appearance:none;border:none;border-radius:8px;padding:10px 14px;background:var(--accent);color:white;font-weight:600;cursor:pointer}
